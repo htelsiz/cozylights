@@ -10,7 +10,7 @@ class WizScenes(IntEnum):
     ROMANCE = 2
     SUNSET = 3
     PARTY = 4
-    FIREPLACE = 14
+    FIREPLACE = 5
     COZY = 6
     FOREST = 7
     PASTEL = 8
@@ -117,9 +117,9 @@ def fireplace(ip: Optional[str] = None):
                 light = wizlight(ip)
                 # First ensure the light is on
                 await light.turn_on()
-                # Set scene 6 for fireplace (per official pywizlight scenes.py)
+                # Set scene 5 for fireplace (per official pywizlight scenes.py)
                 pilot = PilotBuilder(
-                    scene=6,  # Fireplace scene number
+                    scene=5,  # Fireplace scene number
                     brightness=255,  # Full brightness
                     speed=50  # Medium animation speed
                 )
@@ -130,7 +130,7 @@ def fireplace(ip: Optional[str] = None):
                 for light in bulbs:
                     await light.turn_on()
                     pilot = PilotBuilder(
-                        scene=6,
+                        scene=5,
                         brightness=255,
                         speed=50
                     )
