@@ -16,8 +16,12 @@ A command-line tool to control WiZ smart lights on your local network.
 # Install Poetry if you haven't already
 curl -sSL https://install.python-poetry.org | python3 -
 
-# Install cozylights
-poetry add cozylights
+# Clone the repository
+git clone https://github.com/yourusername/cozylights.git
+cd cozylights
+
+# Install dependencies
+poetry install
 ```
 
 ## Usage
@@ -25,7 +29,7 @@ poetry add cozylights
 ### Discover Lights
 Find all WiZ lights on your network:
 ```bash
-cozylights discover
+poetry run cozylights discover
 ```
 
 ### Basic Controls
@@ -33,16 +37,16 @@ cozylights discover
 Turn lights on/off:
 ```bash
 # Turn all lights on
-cozylights on
+poetry run cozylights on
 
 # Turn specific light on
-cozylights on --ip 192.168.1.100
+poetry run cozylights on --ip 192.168.1.100
 
 # Turn all lights off
-cozylights off
+poetry run cozylights off
 
 # Turn specific light off
-cozylights off --ip 192.168.1.100
+poetry run cozylights off --ip 192.168.1.100
 ```
 
 ### Brightness Control
@@ -50,10 +54,10 @@ cozylights off --ip 192.168.1.100
 Adjust brightness (0-255):
 ```bash
 # Set all lights to 50% brightness
-cozylights brightness 128
+poetry run cozylights brightness 128
 
 # Set specific light brightness
-cozylights brightness 128 --ip 192.168.1.100
+poetry run cozylights brightness 128 --ip 192.168.1.100
 ```
 
 ### Scene Control
@@ -61,10 +65,10 @@ cozylights brightness 128 --ip 192.168.1.100
 Set special scenes:
 ```bash
 # Set fireplace mode
-cozylights fireplace
+poetry run cozylights fireplace
 
 # Set fireplace for specific light
-cozylights fireplace --ip 192.168.1.100
+poetry run cozylights fireplace --ip 192.168.1.100
 ```
 
 ## License
