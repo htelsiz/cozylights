@@ -17,7 +17,7 @@ A command-line tool to control WiZ smart lights on your local network.
 curl -sSL https://install.python-poetry.org | python3 -
 
 # Clone the repository
-git clone https://github.com/yourusername/cozylights.git
+git clone https://github.com/htelsiz/cozylights.git
 cd cozylights
 
 # Install dependencies
