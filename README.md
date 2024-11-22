@@ -13,7 +13,11 @@ A command-line tool to control WiZ smart lights on your local network.
 ## Installation
 
 ```bash
-pip install cozylights
+# Install Poetry if you haven't already
+curl -sSL https://install.python-poetry.org | python3 -
+
+# Install cozylights
+poetry add cozylights
 ```
 
 ## Usage
