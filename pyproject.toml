@@ -3,6 +3,9 @@ name = "cozylights"
 version = "0.1.0"
 description = "CLI tool to control Wiz smart lights"
 authors = ["Your Name"]
+packages = [
+    { include = "wiz_control" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
