@@ -120,7 +120,7 @@ def fireplace(ip: Optional[str] = None):
                 # Set scene 5 for fireplace (per official pywizlight scenes.py)
                 pilot = PilotBuilder(
                     scene=5,  # Fireplace scene number
-                    brightness=255,  # Full brightness
+                    brightness=1,  # Lowest brightness
                     speed=50  # Medium animation speed
                 )
                 await light.turn_on(pilot)
@@ -131,7 +131,7 @@ def fireplace(ip: Optional[str] = None):
                     await light.turn_on()
                     pilot = PilotBuilder(
                         scene=5,
-                        brightness=255,
+                        brightness=1,
                         speed=50
                     )
                     await light.turn_on(pilot)
