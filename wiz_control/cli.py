@@ -117,10 +117,11 @@ def fireplace(ip: Optional[str] = None):
                 light = wizlight(ip)
                 # First ensure the light is on
                 await light.turn_on()
-                # Try scene 28 for fireplace
+                # Set scene 6 for fireplace (per official pywizlight scenes.py)
                 pilot = PilotBuilder(
-                    scene=28,  # Fireplace scene number
-                    brightness=255  # Full brightness
+                    scene=6,  # Fireplace scene number
+                    brightness=255,  # Full brightness
+                    speed=50  # Medium animation speed
                 )
                 await light.turn_on(pilot)
                 await light.async_close()
@@ -129,8 +130,9 @@ def fireplace(ip: Optional[str] = None):
                 for light in bulbs:
                     await light.turn_on()
                     pilot = PilotBuilder(
-                        scene=28,
-                        brightness=255
+                        scene=6,
+                        brightness=255,
+                        speed=50
                     )
                     await light.turn_on(pilot)
                 await cleanup_bulbs(bulbs)
