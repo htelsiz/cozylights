@@ -115,12 +115,14 @@ def fireplace(ip: Optional[str] = None):
         try:
             if ip:
                 light = wizlight(ip)
-                await light.turn_on(PilotBuilder(scene=14))  # Explicitly set fireplace scene
+                # Set state and scene explicitly
+                await light.turn_on(PilotBuilder(state=True, scene=14, brightness=255))
                 await light.async_close()
             else:
                 bulbs = await discover_lights()
                 for light in bulbs:
-                    await light.turn_on(PilotBuilder(scene=14))  # Explicitly set fireplace scene
+                    # Set state and scene explicitly
+                    await light.turn_on(PilotBuilder(state=True, scene=14, brightness=255))
                 await cleanup_bulbs(bulbs)
         except Exception as e:
             print(f"Error: {e}")
