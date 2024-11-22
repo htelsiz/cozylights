@@ -11,7 +11,7 @@ pywizlight = "^0.5.14"
 asyncio-discover = "^0.1.3"
 
 [tool.poetry.scripts]
-wiz = "wiz_control.cli:app"
+cozylights = "wiz_control.cli:app"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
