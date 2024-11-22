@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "CLI tool to control Wiz smart lights"
 authors = ["Your Name"]
 packages = [
-    { include = "wiz_control" }
+    { include = "*.py" }
 ]
 
 [tool.poetry.dependencies]
@@ -13,7 +13,7 @@ typer = "^0.9.0"
 pywizlight = "^0.5.14"
 
 [tool.poetry.scripts]
-cozylights = "wiz_control.cli:app"
+cozylights = "cli:app"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
