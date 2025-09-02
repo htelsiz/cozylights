@@ -141,6 +141,35 @@ def fireplace(ip: Optional[str] = None):
     
     asyncio.run(set_fireplace())
 
+@app.command()
+def purple_glow(ip: Optional[str] = None, brightness: int = typer.Option(30, min=1, max=255, help="Brightness level (1-255)")):
+    """Set lights to a cozy purple glow similar to fireplace ambiance"""
+    async def set_purple_glow():
+        try:
+            # Purple RGB values for a cozy, warm purple
+            # Using a slightly warmer purple (more red) for coziness
+            pilot = PilotBuilder(
+                rgb=(148, 0, 211),  # Warm purple color
+                brightness=brightness,  # Low brightness for cozy atmosphere
+                speed=80  # Slow speed for gentle color transitions if supported
+            )
+            
+            if ip:
+                light = wizlight(ip)
+                await light.turn_on()
+                await light.turn_on(pilot)
+                await light.async_close()
+            else:
+                bulbs = await discover_lights()
+                for light in bulbs:
+                    await light.turn_on()
+                    await light.turn_on(pilot)
+                await cleanup_bulbs(bulbs)
+        except Exception as e:
+            print(f"Error: {e}")
+    
+    asyncio.run(set_purple_glow())
+
 if __name__ == "__main__":
     app()
 
